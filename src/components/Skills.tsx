@@ -62,7 +62,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="skills" className="py-14 bg-gray-900 relative overflow-hidden">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
@@ -242,21 +242,21 @@ const Skills: React.FC = () => {
                 <div className="flex items-center justify-center px-4 py-3 bg-green-500/20 border border-green-500/30 rounded-xl hover:bg-green-500/30 transition-all duration-300 group/item">
                   <div className="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
                   <span className="text-green-400 font-medium">
-                    Learning: Rust
+                    Learning: Documentation
                   </span>
                   <LucideIcons.Zap className="w-4 h-4 text-green-400 ml-2 group-hover/item:animate-bounce" />
                 </div>
                 <div className="flex items-center justify-center px-4 py-3 bg-blue-500/20 border border-blue-500/30 rounded-xl hover:bg-blue-500/30 transition-all duration-300 group/item">
                   <div className="w-3 h-3 bg-blue-400 rounded-full mr-3 animate-pulse delay-300"></div>
                   <span className="text-blue-400 font-medium">
-                    Exploring: WebGPU
+                    Exploring: New Update
                   </span>
                   <LucideIcons.Cpu className="w-4 h-4 text-blue-400 ml-2 group-hover/item:animate-spin" />
                 </div>
                 <div className="flex items-center justify-center px-4 py-3 bg-purple-500/20 border border-purple-500/30 rounded-xl hover:bg-purple-500/30 transition-all duration-300 group/item">
                   <div className="w-3 h-3 bg-purple-400 rounded-full mr-3 animate-pulse delay-500"></div>
                   <span className="text-purple-400 font-medium">
-                    Mastering: AI/ML
+                    Mastering: Design Principles
                   </span>
                   <LucideIcons.Brain className="w-4 h-4 text-purple-400 ml-2 group-hover/item:animate-pulse" />
                 </div>

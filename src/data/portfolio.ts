@@ -133,20 +133,27 @@ export const projects: Project[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "React", level: 95, category: "frontend", icon: "Zap" },
-  { name: "TypeScript", level: 92, category: "frontend", icon: "Code" },
-  { name: "Next.js", level: 90, category: "frontend", icon: "ArrowRight" },
+  { name: "React", level: 79, category: "frontend", icon: "Zap" },
+  { name: "TypeScript", level: 84, category: "frontend", icon: "Code" },
+  { name: "Next.js", level: 87, category: "frontend", icon: "ArrowRight" },
+  { name: "Tailwind CSS", level: 90, category: "frontend", icon: "Paintbrush" },
+  { name: "JavaScript", level: 92, category: "frontend", icon: "Code2" },
+  { name: "HTML5", level: 95, category: "frontend", icon: "FileText" },
+  { name: "CSS3", level: 90, category: "frontend", icon: "Square" },
   { name: "Vue.js", level: 85, category: "frontend", icon: "Layers" },
-  { name: "Svelte", level: 78, category: "frontend", icon: "Sparkles" },
   { name: "Node.js", level: 88, category: "backend", icon: "Server" },
+  { name: "Laravel", level: 80, category: "backend", icon: "Package" },
+  { name: "Express.js", level: 82, category: "backend", icon: "Terminal" },
+  { name: "MongoDB", level: 78, category: "backend", icon: "Database" },
   { name: "Python", level: 82, category: "backend", icon: "Terminal" },
   { name: "PostgreSQL", level: 85, category: "backend", icon: "Database" },
-  { name: "GraphQL", level: 87, category: "backend", icon: "Share2" },
   { name: "Docker", level: 83, category: "tools", icon: "Package" },
   { name: "AWS", level: 80, category: "tools", icon: "Cloud" },
   { name: "Git", level: 93, category: "tools", icon: "GitBranch" },
   { name: "Figma", level: 88, category: "design", icon: "Pen" },
   { name: "Adobe XD", level: 85, category: "design", icon: "Palette" },
+  { name: "Photoshop", level: 80, category: "design", icon: "Image" },
+  { name: "Illustrator", level: 75, category: "design", icon: "PenTool" },
 ];
 
 export const testimonials: Testimonial[] = [

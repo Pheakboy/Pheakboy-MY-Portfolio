@@ -177,55 +177,6 @@ const Blog: React.FC = () => {
           ))}
         </div>
 
-        {/* Enhanced Newsletter Signup */}
-        <AnimatedSection animation="fadeInUp" delay={400}>
-          <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 group relative overflow-hidden">
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 25% 25%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
-                                 radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.3) 0%, transparent 50%)`,
-                }}
-              ></div>
-            </div>
-
-            <div className="text-center relative z-10">
-              <BookOpen className="w-12 h-12 text-cyan-400 mx-auto mb-4 group-hover:animate-bounce" />
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Stay Updated
-              </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                Get the latest articles, tutorials, and insights delivered
-                directly to your inbox. Join over 5,000 developers who trust my
-                content.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 hover:bg-white/15"
-                />
-                <button className="group/btn px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg font-semibold hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25">
-                  <span className="flex items-center justify-center">
-                    Subscribe
-                    <ArrowRight
-                      size={16}
-                      className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"
-                    />
-                  </span>
-                </button>
-              </div>
-
-              <p className="text-gray-500 text-sm mt-3">
-                No spam, unsubscribe at any time. 📧
-              </p>
-            </div>
-          </div>
-        </AnimatedSection>
-
         {/* Enhanced View All Articles */}
         <AnimatedSection animation="fadeInUp" delay={600}>
           <div className="text-center mt-12">

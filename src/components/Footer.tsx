@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-1">
               <div className="mb-4">
                 <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  Alex Chen
+                  SOPHEAKTRA.DEV
                 </span>
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -190,7 +190,7 @@ const Footer: React.FC = () => {
 
         {/* Enhanced Bottom Footer */}
         <div className="py-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <AnimatedSection animation="fadeInLeft">
               <div className="flex items-center text-gray-400 text-sm mb-4 md:mb-0">
                 <span>Made with</span>
@@ -204,24 +204,6 @@ const Footer: React.FC = () => {
                   Back to top
                   <ArrowUp className="w-4 h-4 ml-1 group-hover:animate-bounce" />
                 </button>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection animation="fadeInRight">
-              <div className="flex items-center space-x-6 text-gray-400 text-sm">
-                <span>&copy; 2024 Sopheaktra dev. All rights reserved.</span>
-                <a
-                  href="/privacy"
-                  className="hover:text-cyan-400 transition-colors duration-300"
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href="/terms"
-                  className="hover:text-cyan-400 transition-colors duration-300"
-                >
-                  Terms of Service
-                </a>
               </div>
             </AnimatedSection>
           </div>

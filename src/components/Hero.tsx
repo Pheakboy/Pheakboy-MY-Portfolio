@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     () => [
       "Frontend Developer",
       "React/Next Specialist",
-      "UI/UX Enthusiast",
+      "Design Enthusiast",
       "Performance Optimizer",
       "Tech Innovator",
     ],
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
         {/* Enhanced Main Content */}
         <div className="mb-8">
           <AnimatedSection animation="slideInUp" delay={200}>
-            <div className="mt-10">
+            <div className="mt-16">
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6 animate-pulse">
                 ✨ Available for new opportunities
               </span>
@@ -150,12 +150,51 @@ const Hero: React.FC = () => {
           </AnimatedSection>
         </div>
 
+        <AnimatedSection animation="scaleIn" delay={1000}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <a
+              href="/Sot-Sopheaktra-CV.pdf"
+              download="Sot-Sopheaktra-CV.pdf"
+              className="group relative"
+            >
+              <button className="relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 border border-emerald-500/50 text-emerald-400 px-10 py-5 rounded-lg font-mono font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-emerald-500/10 hover:border-emerald-400 hover:text-emerald-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 active:translate-y-0">
+                {/* Matrix-style background lines */}
+                <div className="absolute inset-0 opacity-20">
+                  <div className="absolute top-0 left-1/4 w-px h-full bg-emerald-500/30"></div>
+                  <div className="absolute top-0 left-1/2 w-px h-full bg-emerald-500/20"></div>
+                  <div className="absolute top-0 left-3/4 w-px h-full bg-emerald-500/30"></div>
+                  <div className="absolute top-1/3 left-0 w-full h-px bg-emerald-500/20"></div>
+                  <div className="absolute top-2/3 left-0 w-full h-px bg-emerald-500/30"></div>
+                </div>
+
+                {/* Scanning line effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-linear"></div>
+
+                {/* Corner brackets */}
+                <div className="absolute top-1 left-1 w-3 h-3 border-l-2 border-t-2 border-emerald-400/60"></div>
+                <div className="absolute top-1 right-1 w-3 h-3 border-r-2 border-t-2 border-emerald-400/60"></div>
+                <div className="absolute bottom-1 left-1 w-3 h-3 border-l-2 border-b-2 border-emerald-400/60"></div>
+                <div className="absolute bottom-1 right-1 w-3 h-3 border-r-2 border-b-2 border-emerald-400/60"></div>
+
+                {/* Glitch effect on hover */}
+                <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-75 group-hover:animate-pulse"></div>
+
+                <span className="relative z-10 flex items-center gap-2">
+                  <span className="text-emerald-500">&gt;</span>
+                  Download_Resume
+                  <span className="animate-pulse">|</span>
+                </span>
+              </button>
+            </a>
+          </div>
+        </AnimatedSection>
+
         <AnimatedSection animation="fadeInUp" delay={800}>
           <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-            I craft exceptional digital experiences with cutting-edge
-            technologies, transforming complex ideas into intuitive, performant,
-            and scalable applications that delight users and drive business
-            success. Let's build the future together.
+            I create great digital experiences using the latest technologies. I
+            turn complex ideas into easy-to-use, fast, and reliable applications
+            that people enjoy using and that help businesses grow. Let’s build
+            something amazing together
           </p>
         </AnimatedSection>
 

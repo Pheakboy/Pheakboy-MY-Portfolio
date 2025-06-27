@@ -51,7 +51,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-gray-900 relative overflow-hidden"
+      className="py-14 bg-gray-900 relative overflow-hidden"
     >
       {/* Enhanced Background */}
       <div className="absolute inset-0">

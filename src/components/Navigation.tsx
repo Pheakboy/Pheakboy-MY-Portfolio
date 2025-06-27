@@ -62,9 +62,12 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <a
+              href="#home"
+              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer"
+            >
               SOPHEAKTRA.DEV
-            </span>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -73,7 +76,7 @@ const Navigation: React.FC = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-md font-semibold transition-colors duration-200 ${
                   activeSection === item.href.substring(1)
                     ? "text-cyan-400"
                     : "text-gray-300 hover:text-white"
@@ -87,22 +90,22 @@ const Navigation: React.FC = () => {
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/Pheakboy/Pheakboy-MY-Portfolio"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              <Github size={20} />
+              <Github size={26} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sot-sopheaktra-62380a368/"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              <Linkedin size={20} />
+              <Linkedin size={26} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/Pkboy168"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              <Twitter size={20} />
+              <Twitter size={26} />
             </a>
           </div>
 

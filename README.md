@@ -21,5 +21,5 @@
 Clone the project:
 
 ```bash
-git clone https://github.com/your-username/project-name.git
-cd project-name
+git clone https://github.com/Pheakboy/Pheakboy-MY-Portfolio.git
+cd MY-Portfolio
