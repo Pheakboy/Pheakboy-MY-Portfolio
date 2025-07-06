@@ -1,50 +1,8 @@
 import React from "react";
-import {
-  Award,
-  Coffee,
-  Calendar,
-  Heart,
-  Zap,
-  Target,
-  Users,
-  Code,
-  Sparkles,
-  Star,
-} from "lucide-react";
+import { Heart, Zap, Target, Code, Sparkles, Star } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
-import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import Image from "../../public//images/img.jpg";
 
 const About: React.FC = () => {
-  const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation(0.3);
-
-  const stats = [
-    {
-      icon: Award,
-      label: "Years Experience",
-      value: "1+",
-      color: "from-yellow-400 to-orange-500",
-    },
-    {
-      icon: Coffee,
-      label: "Projects Completed",
-      value: "5+",
-      color: "from-cyan-400 to-blue-500",
-    },
-    {
-      icon: Users,
-      label: "Happy Clients",
-      value: "10+",
-      color: "from-green-400 to-emerald-500",
-    },
-    {
-      icon: Calendar,
-      label: "Code Commits",
-      value: "1K+",
-      color: "from-purple-400 to-pink-500",
-    },
-  ];
-
   const values = [
     "Innovation",
     "Quality",
@@ -52,18 +10,6 @@ const About: React.FC = () => {
     "Accessibility",
     "User Experience",
     "Scalability",
-  ];
-
-  const achievements = [
-    {
-      icon: Star,
-      color: "text-yellow-400",
-    },
-    { icon: Code, color: "text-cyan-400" },
-    {
-      icon: Sparkles,
-      color: "text-purple-400",
-    },
   ];
 
   return (
@@ -123,9 +69,9 @@ const About: React.FC = () => {
                 {/* Main image container */}
                 <div className="relative bg-gray-900 rounded-3xl p-2 overflow-hidden">
                   <img
-                    src={Image}
+                    src="/images/MyImage2.png"
                     alt="Alex Chen - Frontend Developer"
-                    className="w-full h-[500px] object-cover rounded-2xl transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                    className="w-full h-[800px] object-cover rounded-2xl transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />
 
                   {/* Overlay gradient */}
@@ -149,26 +95,6 @@ const About: React.FC = () => {
                       </span>
                     </div>
                   </div>
-                </div>
-
-                {/* Floating achievement badges */}
-                <div className="absolute -right-4 top-1/4 space-y-4">
-                  {achievements.map((achievement, index) => {
-                    const IconComponent = achievement.icon;
-                    return (
-                      <AnimatedSection
-                        key={index}
-                        animation="fadeInRight"
-                        delay={400 + index * 200}
-                      >
-                        <div className="bg-white/10 backdrop-blur-sm rounded-full p-3 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-110 group/badge">
-                          <IconComponent
-                            className={`w-5 h-5 ${achievement.color} group-hover/badge:animate-pulse`}
-                          />
-                        </div>
-                      </AnimatedSection>
-                    );
-                  })}
                 </div>
               </div>
             </div>
@@ -201,10 +127,16 @@ const About: React.FC = () => {
                   </p>
 
                   <p className="text-lg leading-relaxed">
-                    When I'm not coding, you'll find me exploring new
-                    technologies, contributing to open-source projects,
-                    mentoring aspiring developers, or sharing my knowledge
-                    through technical writing and speaking at conferences.
+                    My goal is to continuously learn and grow as a developer,
+                    staying up-to-date with the latest trends and best practices
+                    in the industry. I love collaborating with teams to bring
+                    innovative ideas to life and contribute to projects that
+                    make a positive impact.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    When I'm not coding, you can find me exploring new
+                    technologies, play football, or enjoying a good cup of
+                    coffee while listening to music.
                   </p>
                 </div>
               </div>
@@ -230,53 +162,6 @@ const About: React.FC = () => {
               </div>
             </AnimatedSection>
           </div>
-        </div>
-
-        {/* Enhanced Stats Section */}
-        <div
-          ref={statsRef}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
-        >
-          {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <AnimatedSection
-                key={index}
-                animation="scaleIn"
-                delay={index * 150}
-              >
-                <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden">
-                  {/* Animated background */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                  ></div>
-
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-xl"></div>
-
-                  <div className="relative z-10">
-                    <div
-                      className={`flex items-center justify-center w-14 h-14 bg-gradient-to-r ${stat.color} bg-opacity-20 rounded-xl mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}
-                    >
-                      <IconComponent className="w-7 h-7 text-white group-hover:animate-pulse" />
-                    </div>
-                    <div
-                      className={`text-3xl font-bold bg-gradient-to-r ${
-                        stat.color
-                      } bg-clip-text text-transparent mb-2 ${
-                        statsVisible ? "animate-pulse" : ""
-                      }`}
-                    >
-                      {statsVisible ? stat.value : "0"}
-                    </div>
-                    <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                      {stat.label}
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            );
-          })}
         </div>
 
         {/* Enhanced Personal Touch Section */}
@@ -310,10 +195,10 @@ const About: React.FC = () => {
               </div>
               <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed mb-8">
                 I believe in always learning and keeping up with new technology.
-                When I'm not coding, I enjoy photography, hiking, and finding
-                ways to mix technology with creativity. I also love helping new
-                developers grow and giving back to the tech community by sharing
-                what I know and contributing to open-source projects
+                When I'm not coding, I enjoy playing game, listening to music,
+                and finding ways to mix technology with creativity. I also love
+                helping my friends grow and giving back to the tech community by
+                sharing what I know and contributing to open-source projects
               </p>
 
               {/* Enhanced Learning indicators */}
@@ -348,7 +233,9 @@ const About: React.FC = () => {
         <AnimatedSection animation="fadeInUp" delay={800}>
           <div className="text-center mt-16">
             <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 cursor-pointer group">
-              <span className="mr-3">Want to work together?</span>
+              <a href="#contact" className="mr-3">
+                Want to work together?
+              </a>
               <div className="flex space-x-2">
                 <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-100"></div>

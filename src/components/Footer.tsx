@@ -3,15 +3,15 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Mail,
   Heart,
-  ExternalLink,
+  // ExternalLink,
   ArrowUp,
+  LucideSend,
 } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const Footer: React.FC = () => {
-  const socialLinks = [
+  const connectLinks = [
     {
       icon: Github,
       href: "https://github.com",
@@ -31,9 +31,9 @@ const Footer: React.FC = () => {
       color: "hover:text-cyan-400",
     },
     {
-      icon: Mail,
-      href: "mailto:alex@alexchen.dev",
-      label: "Email",
+      icon: LucideSend,
+      href: "https://t.me/SotSopheaktra",
+      label: "Telegram",
       color: "hover:text-green-400",
     },
   ];
@@ -43,13 +43,6 @@ const Footer: React.FC = () => {
     { name: "Projects", href: "#projects" },
     { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
-  ];
-
-  const resources = [
-    { name: "Resume", href: "/resume.pdf" },
-    { name: "Portfolio Guide", href: "/guide" },
-    { name: "Design System", href: "/design-system" },
-    { name: "Code Snippets", href: "/snippets" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -86,28 +79,6 @@ const Footer: React.FC = () => {
                 Frontend Developer passionate about creating exceptional digital
                 experiences with modern technologies and thoughtful design.
               </p>
-
-              {/* Enhanced Social Links */}
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`group p-3 bg-white/10 rounded-lg text-gray-400 ${social.color} hover:bg-white/20 hover:border-cyan-500/30 transition-all duration-300 border border-white/10 hover:scale-110 hover:-translate-y-1`}
-                      aria-label={social.label}
-                    >
-                      <IconComponent
-                        size={18}
-                        className="group-hover:animate-bounce"
-                      />
-                    </a>
-                  );
-                })}
-              </div>
             </div>
           </AnimatedSection>
 
@@ -138,52 +109,42 @@ const Footer: React.FC = () => {
           {/* Enhanced Resources */}
           <AnimatedSection animation="fadeInUp" delay={300}>
             <div>
-              <h3 className="text-white font-semibold mb-4">Resources</h3>
-              <ul className="space-y-3">
-                {resources.map((resource) => (
-                  <li key={resource.name}>
+              <h3 className="text-white font-semibold mb-4">Connect with Me</h3>
+              {/* Enhanced Social Links */}
+              <div className="flex space-x-4 ">
+                {connectLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
                     <a
-                      href={resource.href}
-                      className="group text-gray-400 hover:text-cyan-400 transition-colors duration-300 flex items-center"
+                      key={index}
+                      href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className={`group p-3 bg-white/10 rounded-lg text-gray-400 ${social.color} hover:bg-white/20 hover:border-cyan-500/30 transition-all duration-300 border border-white/10 hover:scale-110 hover:-translate-y-1`}
+                      aria-label={social.label}
                     >
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">
-                        {resource.name}
-                      </span>
-                      <ExternalLink
-                        size={12}
-                        className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      <IconComponent
+                        size={18}
+                        className="group-hover:animate-bounce"
                       />
                     </a>
-                  </li>
-                ))}
-              </ul>
+                  );
+                })}
+              </div>
+              <p className="text-gray-400 mb-6 leading-relaxed mt-6">
+                sotsopheaktra9696@gmail.com
+              </p>
             </div>
           </AnimatedSection>
 
           {/* Enhanced Newsletter */}
           <AnimatedSection animation="fadeInUp" delay={400}>
             <div>
-              <h3 className="text-white font-semibold mb-4">Stay Updated</h3>
-              <p className="text-gray-400 text-sm mb-4">
-                Get notified about new projects and articles
+              <h3 className="text-white font-semibold mb-4">Newsletter</h3>
+              <p className="text-gray-400 leading-relaxed">
+                No newsletter form here! Just enjoy exploring my portfolio and
+                feel free to connect with me on social media or by email.
               </p>
-              <div className="flex flex-col space-y-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 text-sm transition-all duration-300 hover:bg-white/15"
-                />
-                <button className="group px-3 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg font-medium hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 text-sm hover:scale-105">
-                  <span className="flex items-center justify-center">
-                    Subscribe
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                      →
-                    </span>
-                  </span>
-                </button>
-              </div>
             </div>
           </AnimatedSection>
         </div>

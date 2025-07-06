@@ -30,7 +30,7 @@ interface JourneyItem {
   achievements: string[];
   technologies: string[];
   type: "work" | "education" | "milestone" | "project";
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   color: string;
   image?: string;
 }
@@ -184,15 +184,15 @@ const Journey: React.FC = () => {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case "work":
-        return <Code className="w-4 h-4" />;
+        return <Code className="w-3 h-3 sm:w-4 sm:h-4" />;
       case "education":
-        return <BookOpen className="w-4 h-4" />;
+        return <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />;
       case "milestone":
-        return <Star className="w-4 h-4" />;
+        return <Star className="w-3 h-3 sm:w-4 sm:h-4" />;
       case "project":
-        return <Rocket className="w-4 h-4" />;
+        return <Rocket className="w-3 h-3 sm:w-4 sm:h-4" />;
       default:
-        return <Code className="w-4 h-4" />;
+        return <Code className="w-3 h-3 sm:w-4 sm:h-4" />;
     }
   };
 
@@ -212,17 +212,20 @@ const Journey: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section
+      id="journey"
+      className="py-12 sm:py-16 lg:py-20 bg-gray-900 relative overflow-hidden"
+    >
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-0 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-r from-green-500/5 to-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
-      {/* Floating particles */}
+      {/* Floating particles - Reduced for mobile */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(25)].map((_, i) => (
+        {[...Array(window.innerWidth < 768 ? 10 : 25)].map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-cyan-400/30 rounded-full animate-float"
@@ -239,40 +242,40 @@ const Journey: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <AnimatedSection animation="fadeInUp">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-6">
-              <Clock className="w-8 h-8 text-cyan-400 mr-3 animate-pulse" />
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
+              <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400 mb-2 sm:mb-0 sm:mr-3 animate-pulse" />
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
                 My Journey Through{" "}
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                   Time & Tech
                 </span>
               </h2>
-              <Zap className="w-8 h-8 text-yellow-400 ml-3 animate-pulse delay-500" />
+              <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400 mt-2 sm:mt-0 sm:ml-3 animate-pulse delay-500" />
             </div>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+            <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
               From curious beginner to tech leader - a timeline of growth,
               learning, and innovation
             </p>
 
             {/* Auto-play controls */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <button
                 onClick={() => setIsAutoPlay(!isAutoPlay)}
-                className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 ${
+                className={`flex items-center px-3 py-2 sm:px-4 sm:py-2 rounded-full transition-all duration-300 text-sm sm:text-base ${
                   isAutoPlay
                     ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/30"
                     : "bg-white/10 text-gray-400 border border-white/20"
                 } hover:scale-105`}
               >
                 {isAutoPlay ? (
-                  <Pause size={16} className="mr-2" />
+                  <Pause size={14} className="mr-2" />
                 ) : (
-                  <Play size={16} className="mr-2" />
+                  <Play size={14} className="mr-2" />
                 )}
                 {isAutoPlay ? "Pause" : "Play"} Timeline
               </button>
-              <span className="text-gray-500 text-sm">
+              <span className="text-gray-500 text-xs sm:text-sm">
                 {currentIndex + 1} of {journeyData.length}
               </span>
             </div>
@@ -281,12 +284,12 @@ const Journey: React.FC = () => {
 
         {/* Timeline */}
         <div ref={journeyRef} className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-30"></div>
+          {/* Timeline Line - Mobile: Left aligned, Desktop: Center */}
+          <div className="absolute left-6 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-0.5 sm:w-1 h-full bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-30"></div>
 
           {/* Animated progress line */}
           <div
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-cyan-400 to-purple-500 rounded-full transition-all duration-1000 ease-out"
+            className="absolute left-6 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-0.5 sm:w-1 bg-gradient-to-b from-cyan-400 to-purple-500 rounded-full transition-all duration-1000 ease-out"
             style={{
               height: journeyVisible
                 ? `${((currentIndex + 1) / journeyData.length) * 100}%`
@@ -295,7 +298,7 @@ const Journey: React.FC = () => {
             }}
           ></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {journeyData.map((item, index) => {
               const IconComponent = item.icon;
               const isLeft = index % 2 === 0;
@@ -307,18 +310,45 @@ const Journey: React.FC = () => {
                   animation="fadeInUp"
                   delay={index * 150}
                 >
-                  <div
-                    className={`relative flex items-center ${
-                      isLeft ? "flex-row" : "flex-row-reverse"
-                    }`}
-                  >
-                    {/* Content Card */}
-                    <div className={`w-5/12 ${isLeft ? "pr-8" : "pl-8"}`}>
+                  {/* Mobile Layout: Single column */}
+                  <div className="sm:hidden relative">
+                    {/* Timeline Node - Mobile */}
+                    <div className="absolute left-6 transform -translate-x-1/2 z-20">
                       <div
-                        className={`group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-700 cursor-pointer relative overflow-hidden ${
+                        className={`relative transition-all duration-500 ${
+                          isActive ? "scale-110" : "hover:scale-105"
+                        }`}
+                      >
+                        {/* Outer glow ring */}
+                        <div
+                          className={`absolute inset-0 w-8 h-8 bg-gradient-to-r ${item.color} rounded-full opacity-20 animate-pulse`}
+                        ></div>
+
+                        {/* Main node */}
+                        <div
+                          className={`relative w-6 h-6 bg-gradient-to-r ${
+                            item.color
+                          } rounded-full flex items-center justify-center border-2 border-gray-900 shadow-lg transition-all duration-300 ${
+                            isActive ? "shadow-cyan-500/50" : "hover:shadow-lg"
+                          }`}
+                        >
+                          <IconComponent className="w-3 h-3 text-white" />
+                        </div>
+
+                        {/* Active indicator */}
+                        {isActive && (
+                          <div className="absolute inset-0 w-6 h-6 border border-cyan-400 rounded-full animate-ping"></div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Content Card - Mobile */}
+                    <div className="ml-16 mr-4">
+                      <div
+                        className={`group bg-white/5 backdrop-blur-sm rounded-xl p-4 border transition-all duration-700 cursor-pointer relative overflow-hidden ${
                           isActive
-                            ? "border-cyan-500/50 bg-cyan-500/10 shadow-2xl shadow-cyan-500/25 scale-105"
-                            : "border-white/10 hover:border-cyan-500/30 hover:bg-white/10 hover:-translate-y-2 hover:scale-105"
+                            ? "border-cyan-500/50 bg-cyan-500/10 shadow-lg shadow-cyan-500/25 scale-105"
+                            : "border-white/10 hover:border-cyan-500/30 hover:bg-white/10 hover:-translate-y-1 hover:scale-105"
                         }`}
                         onClick={() =>
                           setSelectedItem(
@@ -338,38 +368,40 @@ const Journey: React.FC = () => {
 
                         <div className="relative z-10">
                           {/* Header */}
-                          <div className="flex items-start justify-between mb-4">
-                            <div>
-                              <div className="flex items-center mb-2">
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="flex-1">
+                              <div className="flex flex-wrap items-center gap-2 mb-2">
                                 <span
                                   className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getTypeColor(
                                     item.type
-                                  )} mr-3`}
+                                  )}`}
                                 >
                                   {getTypeIcon(item.type)}
                                   <span className="ml-1 capitalize">
                                     {item.type}
                                   </span>
                                 </span>
-                                <span className="text-cyan-400 font-bold text-lg">
+                                <span className="text-cyan-400 font-bold text-sm">
                                   {item.year}
                                 </span>
                               </div>
-                              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
+                              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
                                 {item.title}
                               </h3>
-                              <div className="flex items-center text-gray-400 text-sm mb-2">
+                              <div className="flex flex-col sm:flex-row sm:items-center text-gray-400 text-xs mb-2">
                                 <span className="font-medium text-purple-400">
                                   {item.company}
                                 </span>
-                                <span className="mx-2">•</span>
-                                <MapPin size={14} className="mr-1" />
-                                {item.location}
+                                <span className="hidden sm:inline mx-2">•</span>
+                                <div className="flex items-center">
+                                  <MapPin size={12} className="mr-1" />
+                                  {item.location}
+                                </div>
                               </div>
                             </div>
                             <ChevronRight
-                              size={20}
-                              className={`text-gray-400 transition-transform duration-300 ${
+                              size={16}
+                              className={`text-gray-400 transition-transform duration-300 flex-shrink-0 ml-2 ${
                                 selectedItem === item.id
                                   ? "rotate-90"
                                   : "group-hover:translate-x-1"
@@ -378,14 +410,14 @@ const Journey: React.FC = () => {
                           </div>
 
                           {/* Description */}
-                          <p className="text-gray-300 mb-4 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                          <p className="text-gray-300 text-sm mb-3 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                             {item.description}
                           </p>
 
                           {/* Technologies */}
-                          <div className="flex flex-wrap gap-2 mb-4">
+                          <div className="flex flex-wrap gap-1 mb-3">
                             {item.technologies
-                              .slice(0, 4)
+                              .slice(0, 3)
                               .map((tech, techIndex) => (
                                 <span
                                   key={tech}
@@ -397,28 +429,28 @@ const Journey: React.FC = () => {
                                   {tech}
                                 </span>
                               ))}
-                            {item.technologies.length > 4 && (
+                            {item.technologies.length > 3 && (
                               <span className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full text-xs text-cyan-400 border border-cyan-500/30">
-                                +{item.technologies.length - 4}
+                                +{item.technologies.length - 3}
                               </span>
                             )}
                           </div>
 
                           {/* Expanded Content */}
                           {selectedItem === item.id && (
-                            <div className="mt-4 pt-4 border-t border-white/10 animate-fadeIn">
-                              <h4 className="text-white font-semibold mb-3 flex items-center">
-                                <Award className="w-4 h-4 text-yellow-400 mr-2" />
+                            <div className="mt-3 pt-3 border-t border-white/10 animate-fadeIn">
+                              <h4 className="text-white font-semibold mb-2 flex items-center text-sm">
+                                <Award className="w-3 h-3 text-yellow-400 mr-2" />
                                 Key Achievements
                               </h4>
-                              <ul className="space-y-2">
+                              <ul className="space-y-1">
                                 {item.achievements.map(
                                   (achievement, achIndex) => (
                                     <li
                                       key={achIndex}
-                                      className="flex items-start text-gray-300 text-sm"
+                                      className="flex items-start text-gray-300 text-xs"
                                     >
-                                      <Target className="w-3 h-3 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                                      <Target className="w-2 h-2 text-green-400 mr-2 mt-1 flex-shrink-0" />
                                       {achievement}
                                     </li>
                                   )
@@ -429,51 +461,180 @@ const Journey: React.FC = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Timeline Node */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
-                      <div
-                        className={`relative transition-all duration-500 ${
-                          isActive ? "scale-125" : "hover:scale-110"
-                        }`}
-                      >
-                        {/* Outer glow ring */}
-                        <div
-                          className={`absolute inset-0 w-16 h-16 bg-gradient-to-r ${item.color} rounded-full opacity-20 animate-pulse`}
-                        ></div>
-
-                        {/* Main node */}
-                        <div
-                          className={`relative w-12 h-12 bg-gradient-to-r ${
-                            item.color
-                          } rounded-full flex items-center justify-center border-4 border-gray-900 shadow-lg transition-all duration-300 ${
-                            isActive ? "shadow-cyan-500/50" : "hover:shadow-lg"
-                          }`}
-                        >
-                          <IconComponent className="w-6 h-6 text-white" />
-                        </div>
-
-                        {/* Active indicator */}
-                        {isActive && (
-                          <div className="absolute inset-0 w-12 h-12 border-2 border-cyan-400 rounded-full animate-ping"></div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Year Badge */}
+                  {/* Desktop Layout: Alternating sides */}
+                  <div className="hidden sm:block">
                     <div
-                      className={`w-5/12 ${
-                        isLeft ? "pl-36 text-left" : "pr-36 text-right"
+                      className={`relative flex items-center ${
+                        isLeft ? "flex-row" : "flex-row-reverse"
                       }`}
                     >
+                      {/* Content Card */}
+                      <div className={`w-5/12 ${isLeft ? "pr-8" : "pl-8"}`}>
+                        <div
+                          className={`group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border transition-all duration-700 cursor-pointer relative overflow-hidden ${
+                            isActive
+                              ? "border-cyan-500/50 bg-cyan-500/10 shadow-2xl shadow-cyan-500/25 scale-105"
+                              : "border-white/10 hover:border-cyan-500/30 hover:bg-white/10 hover:-translate-y-2 hover:scale-105"
+                          }`}
+                          onClick={() =>
+                            setSelectedItem(
+                              selectedItem === item.id ? null : item.id
+                            )
+                          }
+                        >
+                          {/* Animated background */}
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                          ></div>
+
+                          {/* Glow effect for active item */}
+                          {isActive && (
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 animate-pulse"></div>
+                          )}
+
+                          <div className="relative z-10">
+                            {/* Header */}
+                            <div className="flex items-start justify-between mb-4">
+                              <div>
+                                <div className="flex items-center mb-2">
+                                  <span
+                                    className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getTypeColor(
+                                      item.type
+                                    )} mr-3`}
+                                  >
+                                    {getTypeIcon(item.type)}
+                                    <span className="ml-1 capitalize">
+                                      {item.type}
+                                    </span>
+                                  </span>
+                                  <span className="text-cyan-400 font-bold text-lg">
+                                    {item.year}
+                                  </span>
+                                </div>
+                                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors duration-300">
+                                  {item.title}
+                                </h3>
+                                <div className="flex items-center text-gray-400 text-sm mb-2">
+                                  <span className="font-medium text-purple-400">
+                                    {item.company}
+                                  </span>
+                                  <span className="mx-2">•</span>
+                                  <MapPin size={14} className="mr-1" />
+                                  {item.location}
+                                </div>
+                              </div>
+                              <ChevronRight
+                                size={20}
+                                className={`text-gray-400 transition-transform duration-300 ${
+                                  selectedItem === item.id
+                                    ? "rotate-90"
+                                    : "group-hover:translate-x-1"
+                                }`}
+                              />
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-gray-300 mb-4 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                              {item.description}
+                            </p>
+
+                            {/* Technologies */}
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {item.technologies
+                                .slice(0, 4)
+                                .map((tech, techIndex) => (
+                                  <span
+                                    key={tech}
+                                    className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-300 border border-white/20 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:text-cyan-400 transition-all duration-300"
+                                    style={{
+                                      animationDelay: `${techIndex * 100}ms`,
+                                    }}
+                                  >
+                                    {tech}
+                                  </span>
+                                ))}
+                              {item.technologies.length > 4 && (
+                                <span className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full text-xs text-cyan-400 border border-cyan-500/30">
+                                  +{item.technologies.length - 4}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Expanded Content */}
+                            {selectedItem === item.id && (
+                              <div className="mt-4 pt-4 border-t border-white/10 animate-fadeIn">
+                                <h4 className="text-white font-semibold mb-3 flex items-center">
+                                  <Award className="w-4 h-4 text-yellow-400 mr-2" />
+                                  Key Achievements
+                                </h4>
+                                <ul className="space-y-2">
+                                  {item.achievements.map(
+                                    (achievement, achIndex) => (
+                                      <li
+                                        key={achIndex}
+                                        className="flex items-start text-gray-300 text-sm"
+                                      >
+                                        <Target className="w-3 h-3 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                                        {achievement}
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Timeline Node */}
+                      <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
+                        <div
+                          className={`relative transition-all duration-500 ${
+                            isActive ? "scale-125" : "hover:scale-110"
+                          }`}
+                        >
+                          {/* Outer glow ring */}
+                          <div
+                            className={`absolute inset-0 w-16 h-16 bg-gradient-to-r ${item.color} rounded-full opacity-20 animate-pulse`}
+                          ></div>
+
+                          {/* Main node */}
+                          <div
+                            className={`relative w-12 h-12 bg-gradient-to-r ${
+                              item.color
+                            } rounded-full flex items-center justify-center border-4 border-gray-900 shadow-lg transition-all duration-300 ${
+                              isActive
+                                ? "shadow-cyan-500/50"
+                                : "hover:shadow-lg"
+                            }`}
+                          >
+                            <IconComponent className="w-6 h-6 text-white" />
+                          </div>
+
+                          {/* Active indicator */}
+                          {isActive && (
+                            <div className="absolute inset-0 w-12 h-12 border-2 border-cyan-400 rounded-full animate-ping"></div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Year Badge */}
                       <div
-                        className={`inline-block px-4 py-2 bg-gradient-to-r ${item.color} bg-opacity-20 rounded-full border border-white/20 backdrop-blur-sm`}
+                        className={`w-5/12 ${
+                          isLeft ? "pl-8 text-left" : "pr-8 text-right"
+                        }`}
                       >
-                        <div className="flex items-center">
-                          <Calendar className="w-4 h-4 text-white mr-2" />
-                          <span className="text-white font-bold">
-                            {item.year}
-                          </span>
+                        <div
+                          className={`inline-block px-4 py-2 bg-gradient-to-r ${item.color} bg-opacity-20 rounded-full border border-white/20 backdrop-blur-sm`}
+                        >
+                          <div className="flex items-center">
+                            <Calendar className="w-4 h-4 text-white mr-2" />
+                            <span className="text-white font-bold">
+                              {item.year}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -486,7 +647,7 @@ const Journey: React.FC = () => {
 
         {/* Stats Summary */}
         <AnimatedSection animation="fadeInUp" delay={600}>
-          <div className="mt-20 grid md:grid-cols-4 gap-6">
+          <div className="mt-12 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 label: "Years of Experience",
@@ -517,19 +678,19 @@ const Journey: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:scale-105 text-center"
+                  className="group bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:scale-105 text-center"
                 >
                   <div
-                    className={`flex items-center justify-center w-14 h-14 bg-gradient-to-r ${stat.color} bg-opacity-20 rounded-xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    className={`flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-r ${stat.color} bg-opacity-20 rounded-lg sm:rounded-xl mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <IconComponent className="w-7 h-7 text-white" />
+                    <IconComponent className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                   </div>
                   <div
-                    className={`text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}
+                    className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 sm:mb-2`}
                   >
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                  <div className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                     {stat.label}
                   </div>
                 </div>
@@ -540,13 +701,13 @@ const Journey: React.FC = () => {
 
         {/* Call to Action */}
         <AnimatedSection animation="fadeInUp" delay={800}>
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 group">
-              <Sparkles className="w-12 h-12 text-cyan-400 mx-auto mb-4 group-hover:animate-spin" />
-              <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="text-center mt-12 sm:mt-16">
+            <div className="bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 group">
+              <Sparkles className="w-8 h-8 sm:w-12 sm:h-12 text-cyan-400 mx-auto mb-3 sm:mb-4 group-hover:animate-spin" />
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Ready for the Next Chapter?
               </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              <p className="text-gray-300 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base">
                 My journey continues to evolve with new technologies,
                 challenges, and opportunities. Let's build something amazing
                 together!
@@ -557,13 +718,13 @@ const Journey: React.FC = () => {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="group/btn px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-semibold transition-all duration-500 hover:from-cyan-400 hover:to-purple-500 hover:shadow-2xl hover:shadow-cyan-500/50 hover:-translate-y-2 hover:scale-105"
+                className="group/btn px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-semibold transition-all duration-500 hover:from-cyan-400 hover:to-purple-500 hover:shadow-2xl hover:shadow-cyan-500/50 hover:-translate-y-2 hover:scale-105 text-sm sm:text-base"
               >
                 <span className="flex items-center">
                   Let's Connect
                   <ChevronRight
                     className="ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"
-                    size={20}
+                    size={16}
                   />
                 </span>
               </button>

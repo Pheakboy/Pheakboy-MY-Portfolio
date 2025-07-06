@@ -1,4 +1,4 @@
-import { Project, Skill, Testimonial, BlogPost } from "../types/types";
+import { Project, Skill, BlogPost } from "../types/types";
 
 export const projects: Project[] = [
   {
@@ -135,72 +135,24 @@ export const projects: Project[] = [
 export const skills: Skill[] = [
   { name: "React", level: 79, category: "frontend", icon: "Zap" },
   { name: "TypeScript", level: 84, category: "frontend", icon: "Code" },
-  { name: "Next.js", level: 87, category: "frontend", icon: "ArrowRight" },
+  { name: "Next.js", level: 85, category: "frontend", icon: "ArrowRight" },
   { name: "Tailwind CSS", level: 90, category: "frontend", icon: "Paintbrush" },
-  { name: "JavaScript", level: 92, category: "frontend", icon: "Code2" },
+  { name: "JavaScript", level: 72, category: "frontend", icon: "Code2" },
   { name: "HTML5", level: 95, category: "frontend", icon: "FileText" },
-  { name: "CSS3", level: 90, category: "frontend", icon: "Square" },
-  { name: "Vue.js", level: 85, category: "frontend", icon: "Layers" },
-  { name: "Node.js", level: 88, category: "backend", icon: "Server" },
-  { name: "Laravel", level: 80, category: "backend", icon: "Package" },
-  { name: "Express.js", level: 82, category: "backend", icon: "Terminal" },
+  { name: "CSS3", level: 80, category: "frontend", icon: "Square" },
+  { name: "Vue.js", level: 72, category: "frontend", icon: "Layers" },
+  { name: "Node.js", level: 78, category: "backend", icon: "Server" },
+  { name: "Laravel", level: 75, category: "backend", icon: "Package" },
+  { name: "Express.js", level: 79, category: "backend", icon: "Terminal" },
   { name: "MongoDB", level: 78, category: "backend", icon: "Database" },
-  { name: "Python", level: 82, category: "backend", icon: "Terminal" },
-  { name: "PostgreSQL", level: 85, category: "backend", icon: "Database" },
-  { name: "Docker", level: 83, category: "tools", icon: "Package" },
-  { name: "AWS", level: 80, category: "tools", icon: "Cloud" },
-  { name: "Git", level: 93, category: "tools", icon: "GitBranch" },
-  { name: "Figma", level: 88, category: "design", icon: "Pen" },
-  { name: "Adobe XD", level: 85, category: "design", icon: "Palette" },
+  { name: "PostgreSQL", level: 75, category: "backend", icon: "Database" },
+  { name: "Supabase", level: 76, category: "backend", icon: "Database" },
+  { name: "Docker", level: 77, category: "tools", icon: "Package" },
+  { name: "AWS", level: 74, category: "tools", icon: "Cloud" },
+  { name: "Git", level: 87, category: "tools", icon: "GitBranch" },
+  { name: "Figma", level: 79, category: "design", icon: "Pen" },
   { name: "Photoshop", level: 80, category: "design", icon: "Image" },
-  { name: "Illustrator", level: 75, category: "design", icon: "PenTool" },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    id: "1",
-    name: "Sarah Chen",
-    role: "Senior Product Manager",
-    company: "TechFlow Inc.",
-    content:
-      "Working with Alex was an absolute game-changer for our product. Their attention to detail and innovative approach to frontend development helped us increase user engagement by 150%. The code quality and performance optimizations were exceptional.",
-    avatar:
-      "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150",
-    rating: 5,
-  },
-  {
-    id: "2",
-    name: "Marcus Rodriguez",
-    role: "CTO",
-    company: "StartupXYZ",
-    content:
-      "Alex delivered a complex e-commerce platform ahead of schedule and under budget. Their expertise in React and TypeScript, combined with their problem-solving skills, made them an invaluable team member. I would hire them again without hesitation.",
-    avatar:
-      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
-    rating: 5,
-  },
-  {
-    id: "3",
-    name: "Emily Watson",
-    role: "Design Lead",
-    company: "Creative Studios",
-    content:
-      "The collaboration between Alex and our design team was seamless. They transformed our complex designs into pixel-perfect, interactive experiences. Their understanding of both design principles and technical implementation is remarkable.",
-    avatar:
-      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
-    rating: 5,
-  },
-  {
-    id: "4",
-    name: "David Kim",
-    role: "Founder",
-    company: "InnovateLab",
-    content:
-      "Alex helped us scale our application from 1,000 to 100,000+ users without breaking a sweat. Their expertise in performance optimization and scalable architecture saved us months of development time and thousands in infrastructure costs.",
-    avatar:
-      "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150",
-    rating: 5,
-  },
+  { name: "Canva", level: 89, category: "design", icon: "Image" },
 ];
 
 export const blogPosts: BlogPost[] = [
