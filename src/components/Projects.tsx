@@ -6,7 +6,6 @@ import {
   Filter,
   Star,
   Calendar,
-  Users,
 } from "lucide-react";
 import { projects } from "../data/portfolio";
 import AnimatedSection from "./AnimatedSection";
@@ -17,12 +16,11 @@ const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const { ref: projectsRef } = useScrollAnimation(0.1);
 
-  const categories = ["all", "web", "mobile", "desktop"];
+  const categories = ["all", "web", "mobile"];
   const categoryLabels = {
     all: "All Projects",
     web: "Web Apps",
     mobile: "Mobile Apps",
-    desktop: "Desktop Apps",
   };
 
   const filteredProjects =
@@ -36,7 +34,8 @@ const Projects: React.FC = () => {
   }> = ({ project, index }) => (
     <AnimatedSection animation="fadeInUp" delay={index * 150}>
       <div
-        className={`group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-500/30 transition-all duration-700 hover:-translate-y-3 hover:scale-105 ${
+         onClick={() => setSelectedProject(project.id)}
+        className={`group relative overflow-hidden rounded-2xl cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-500/30 transition-all duration-700 hover:-translate-y-3 hover:scale-105 ${
           project.featured ? "md:col-span-2 lg:col-span-2" : ""
         }`}
       >
@@ -101,10 +100,6 @@ const Projects: React.FC = () => {
           {/* Project Stats */}
           <div className="absolute top-4 right-4 flex space-x-2">
             <div className="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-full text-white text-xs flex items-center">
-              <Users size={12} className="mr-1" />
-              {Math.floor(Math.random() * 50) + 10}k
-            </div>
-            <div className="px-2 py-1 bg-black/50 backdrop-blur-sm rounded-full text-white text-xs flex items-center">
               <Calendar size={12} className="mr-1" />
               2024
             </div>
@@ -148,7 +143,8 @@ const Projects: React.FC = () => {
                 <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                 Active
               </span>
-              <span>Last updated: 2 days ago</span>
+              {/* <span>Last updated: 2 days ago</span> */}
+                <span>See more</span>
             </div>
           </div>
         </div>

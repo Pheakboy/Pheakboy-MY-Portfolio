@@ -198,7 +198,7 @@ const About: React.FC = () => {
                 When I'm not coding, I enjoy playing game, listening to music,
                 and finding ways to mix technology with creativity. I also love
                 helping my friends grow and giving back to the tech community by
-                sharing what I know and contributing to open-source projects
+                sharing what I know and get in touch with teammates.
               </p>
 
               {/* Enhanced Learning indicators */}
@@ -213,7 +213,7 @@ const About: React.FC = () => {
                 <div className="flex items-center px-4 py-3 bg-blue-500/20 border border-blue-500/30 rounded-full hover:bg-blue-500/30 hover:scale-105 transition-all duration-300 group/indicator">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse delay-300"></div>
                   <span className="text-blue-400 font-medium">
-                    Exploring: AI/ML Integration
+                    Exploring: API Integration
                   </span>
                   <Code className="w-4 h-4 text-blue-400 ml-2 opacity-0 group-hover/indicator:opacity-100 transition-opacity duration-300" />
                 </div>
