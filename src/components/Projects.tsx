@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
   }> = ({ project, index }) => (
     <AnimatedSection animation="fadeInUp" delay={index * 150}>
       <div
-         onClick={() => setSelectedProject(project.id)}
+        onClick={() => setSelectedProject(project.id)}
         className={`group relative overflow-hidden rounded-2xl cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-500/30 transition-all duration-700 hover:-translate-y-3 hover:scale-105 ${
           project.featured ? "md:col-span-2 lg:col-span-2" : ""
         }`}
@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
                 Active
               </span>
               {/* <span>Last updated: 2 days ago</span> */}
-                <span>See more</span>
+              <span>See more</span>
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@ const Projects: React.FC = () => {
                 Want to see more of my work?
               </p>
               <a
-                href="https://github.com"
+                href="https://github.com/Pheakboy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full font-semibold transition-all duration-500 hover:from-cyan-400 hover:to-purple-500 hover:shadow-2xl hover:shadow-cyan-500/50 hover:-translate-y-2 hover:scale-105 group/btn"

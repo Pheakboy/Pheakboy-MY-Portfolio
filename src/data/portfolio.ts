@@ -31,14 +31,13 @@ export const projects: Project[] = [
   {
     id: "3",
     title: "TodoList App",
-    description:
-      "A task management app built with React js",
+    description: "A task management app built with React js",
     longDescription:
       "A comprehensive meditation and mindfulness app that tracks user progress, provides personalized content recommendations, and integrates with health devices. Features real-time biometric monitoring and AI-powered mood analysis.",
-    image:
-      "/images/TodoList.png",
+    image: "/images/TodoList.png",
     technologies: [
       "React Js",
+      "Vite",
       "TypeScript",
       "JavaScript",
       "Tailwind CSS",
@@ -51,18 +50,11 @@ export const projects: Project[] = [
   {
     id: "4",
     title: "Burger app UI",
-    description:
-      "A burger app UI built with React js and TypeScript",
+    description: "A burger app UI built with React js and TypeScript",
     longDescription:
       "A sophisticated burger app UI featuring a modern design, interactive components, and seamless user experience. Built with performance and scalability in mind.",
-    image:
-      "/images/burgerui.png",
-    technologies: [
-      "React js",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-    ],
+    image: "/images/burgerui.png",
+    technologies: ["React js", "TypeScript", "JavaScript", "Tailwind CSS"],
     githubUrl: "https://github.com/Pheakboy/UI",
     liveUrl: "https://burgerui.vercel.app/",
     featured: false,
@@ -70,22 +62,26 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    title: "Smart Home Dashboard",
-    description:
-      "IoT device management with predictive automation and energy optimization",
+    title: "E-commerce Ui website",
+    description: "An e-commerce UI website built with React js and TypeScript",
     longDescription:
-      "An intelligent home automation dashboard that connects and manages IoT devices, provides predictive automation based on usage patterns, and optimizes energy consumption. Features voice control integration and mobile app companion.",
-    image:
-      "https://images.pexels.com/photos/4966996/pexels-photo-4966996.jpeg?auto=compress&cs=tinysrgb&w=800",
-    technologies: [
-      "Vue.js",
-      "IoT.js",
-      "MQTT",
-      "InfluxDB",
-      "Grafana",
-      "Raspberry Pi",
-    ],
+      "A feature-rich e-commerce UI website that provides a seamless shopping experience with modern design elements, responsive layouts, and interactive components. Built with React and TypeScript for enhanced performance.",
+    image: "/images/ecommerweb.png",
+    technologies: ["React js", "TypeScript", "JavaScript", "Tailwind CSS"],
     githubUrl: "https://github.com/Pheakboy/TypeScript_learn",
+    liveUrl: "https://type-script-learn-chi.vercel.app/",
+    featured: false,
+    category: "web",
+  },
+  {
+    id: "6",
+    title: "Crud App UI with api",
+    description: "A CRUD application UI built with React js and TypeScript",
+    longDescription:
+      "A robust CRUD application UI that allows users to create, read, update, and delete data with a modern design and responsive layout. Built with React and TypeScript for enhanced type safety and performance.",
+    image: "/images/react_crud.png",
+    technologies: ["React js", "TypeScript", "JavaScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/Pheakboy/React_With_API",
     liveUrl: "",
     featured: false,
     category: "web",
@@ -93,22 +89,22 @@ export const projects: Project[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "React", level: 79, category: "frontend", icon: "Zap" },
-  { name: "TypeScript", level: 84, category: "frontend", icon: "Code" },
-  { name: "Next.js", level: 80, category: "frontend", icon: "ArrowRight" },
+  { name: "React", level: 75, category: "frontend", icon: "Zap" },
+  { name: "TypeScript", level: 77, category: "frontend", icon: "Code" },
+  { name: "Next.js", level: 79, category: "frontend", icon: "ArrowRight" },
   { name: "Tailwind CSS", level: 90, category: "frontend", icon: "Paintbrush" },
   { name: "JavaScript", level: 72, category: "frontend", icon: "Code2" },
-  { name: "HTML5", level: 95, category: "frontend", icon: "FileText" },
-  { name: "CSS3", level: 90, category: "frontend", icon: "Square" },
-  { name: "Node.js", level: 75, category: "backend", icon: "Server" },
-  { name: "Laravel", level: 68, category: "backend", icon: "Package" },
-  { name: "Express.js", level: 72, category: "backend", icon: "Terminal" },
-  { name: "MongoDB", level: 75, category: "backend", icon: "Database" },
-  { name: "Supabase", level: 70, category: "backend", icon: "Database" },
-  { name: "Git", level: 87, category: "tools", icon: "GitBranch" },
+  { name: "HTML", level: 95, category: "frontend", icon: "FileText" },
+  { name: "CSS", level: 90, category: "frontend", icon: "Square" },
+  { name: "Node.js", level: 50, category: "backend", icon: "Server" },
+  { name: "Laravel", level: 50, category: "backend", icon: "Package" },
+  { name: "Express.js", level: 55, category: "backend", icon: "Terminal" },
+  { name: "MongoDB", level: 55, category: "backend", icon: "Database" },
+  { name: "Supabase", level: 50, category: "backend", icon: "Database" },
+  { name: "Git", level: 85, category: "tools", icon: "GitBranch" },
   { name: "Postman", level: 80, category: "tools", icon: "Package" },
   { name: "Figma", level: 65, category: "design", icon: "Pen" },
-  { name: "Photoshop", level: 60, category: "design", icon: "Image" },
+  { name: "Photoshop", level: 50, category: "design", icon: "Image" },
   { name: "Canva", level: 89, category: "design", icon: "Image" },
 ];
 

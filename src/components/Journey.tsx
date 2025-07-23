@@ -7,9 +7,7 @@ import {
   Rocket,
   Star,
   Zap,
-  Trophy,
   BookOpen,
-  Users,
   Target,
   Sparkles,
   ChevronRight,
@@ -45,129 +43,58 @@ const Journey: React.FC = () => {
   const journeyData: JourneyItem[] = [
     {
       id: "1",
-      year: "2018",
-      title: "Started My Coding Journey",
-      company: "Self-Taught",
-      location: "San Francisco, CA",
+      year: "Feb 2025 - Present",
+      title: "Web Frontend Developer intern",
+      company: "Digital One",
+      location: "Phnom Penh, Cambodia",
       description:
-        "Discovered my passion for programming through online courses and tutorials. Built my first website using HTML, CSS, and JavaScript.",
+        "Gained hands-on experience in web development, working on real-world projects and collaborating with experienced developers.",
       achievements: [
-        "Completed 100+ coding challenges",
-        "Built 5 personal projects",
+        "Working with real world application",
+        "Built E-Commerce projects",
         "Learned fundamentals of web development",
+        "Worked with modern frontend frameworks",
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Git"],
-      type: "education",
-      icon: BookOpen,
+      technologies: ["React", "Next.js", "JavaScript", "TypeScript", "Git"],
+      type: "work",
+      icon: Rocket,
       color: "from-green-400 to-emerald-500",
     },
     {
       id: "2",
-      year: "2019",
-      title: "Junior Frontend Developer",
-      company: "TechStart Inc.",
-      location: "San Francisco, CA",
+      year: "2024",
+      title: "Frontend Developer intern",
+      company: "CDDE",
+      location: "Phnom Penh, Cambodia",
       description:
-        "First professional role where I learned React and modern development practices. Worked on user-facing features for a SaaS platform.",
+        "Gained hands-on experience in web development, working on real-world projects and learn about web development",
       achievements: [
-        "Improved page load speed by 40%",
+        "Improved my develop skills",
         "Implemented responsive design system",
-        "Mentored 2 intern developers",
+        "Improved Communication skills with team members",
+        "Learned about Agile methodologies",
       ],
-      technologies: ["React", "TypeScript", "Sass", "Webpack"],
-      type: "work",
-      icon: Code,
+      technologies: ["React", "JavaScript", "git", "Subpabase"],
+      type: "education",
+      icon: BookOpen,
       color: "from-blue-400 to-cyan-500",
     },
     {
       id: "3",
-      year: "2020",
-      title: "Frontend Developer",
-      company: "InnovateLab",
-      location: "Remote",
+      year: "2022 - 2025",
+      title: "Bachelor of Computer Science",
+      company: "Cambodia Academy of Digital Technology",
+      location: "Phnom Penh",
       description:
-        "Promoted to mid-level developer. Led frontend architecture decisions and implemented complex UI components for enterprise clients.",
+        "Gained a solid foundation in computer science principles, software development, and project management.",
       achievements: [
-        "Led team of 4 developers",
-        "Reduced bundle size by 60%",
-        "Implemented automated testing pipeline",
+        "Completed capston project both capston I and capston II",
+        "Mentored high school students in Svay Rieng province",
       ],
-      technologies: ["React", "Next.js", "GraphQL", "Jest"],
-      type: "work",
-      icon: Rocket,
+      technologies: [],
+      type: "education",
+      icon: BookOpen,
       color: "from-purple-400 to-pink-500",
-    },
-    {
-      id: "4",
-      year: "2021",
-      title: "Open Source Contributor",
-      company: "Various Projects",
-      location: "Global",
-      description:
-        "Started contributing to major open source projects. Created my own library that gained 10k+ GitHub stars.",
-      achievements: [
-        "Created popular React library",
-        "Contributed to 15+ open source projects",
-        "Spoke at 3 tech conferences",
-      ],
-      technologies: ["React", "TypeScript", "Node.js", "Docker"],
-      type: "milestone",
-      icon: Star,
-      color: "from-yellow-400 to-orange-500",
-    },
-    {
-      id: "5",
-      year: "2022",
-      title: "Senior Frontend Developer",
-      company: "TechFlow Inc.",
-      location: "San Francisco, CA",
-      description:
-        "Senior role focusing on performance optimization and team leadership. Built scalable applications serving millions of users.",
-      achievements: [
-        "Architected micro-frontend system",
-        "Improved Core Web Vitals by 80%",
-        "Led technical interviews",
-      ],
-      technologies: ["React", "Next.js", "TypeScript", "AWS"],
-      type: "work",
-      icon: Trophy,
-      color: "from-cyan-400 to-blue-500",
-    },
-    {
-      id: "6",
-      year: "2023",
-      title: "Tech Lead & Mentor",
-      company: "StartupXYZ",
-      location: "San Francisco, CA",
-      description:
-        "Leading a team of 8 developers while mentoring junior developers. Focus on AI integration and modern web technologies.",
-      achievements: [
-        "Built AI-powered development tools",
-        "Mentored 20+ developers",
-        "Increased team productivity by 150%",
-      ],
-      technologies: ["React", "AI/ML", "WebAssembly", "Rust"],
-      type: "work",
-      icon: Users,
-      color: "from-purple-400 to-pink-500",
-    },
-    {
-      id: "7",
-      year: "2024",
-      title: "Freelance & Innovation",
-      company: "Independent",
-      location: "San Francisco, CA",
-      description:
-        "Currently working on cutting-edge projects, exploring AI integration, and building the future of web development.",
-      achievements: [
-        "Launched 3 successful products",
-        "Generated $500k+ in revenue",
-        "Building next-gen development tools",
-      ],
-      technologies: ["React", "AI/ML", "WebGPU", "Quantum Computing"],
-      type: "milestone",
-      icon: Sparkles,
-      color: "from-cyan-400 to-purple-500",
     },
   ];
 
@@ -254,7 +181,7 @@ const Journey: React.FC = () => {
               <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400 mt-2 sm:mt-0 sm:ml-3 animate-pulse delay-500" />
             </div>
             <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
-              From curious beginner to tech leader - a timeline of growth,
+              From a student to a web developer - a timeline of growth,
               learning, and innovation
             </p>
 
@@ -595,11 +522,6 @@ const Journey: React.FC = () => {
                             isActive ? "scale-125" : "hover:scale-110"
                           }`}
                         >
-                          {/* Outer glow ring */}
-                          <div
-                            className={`absolute inset-0 w-16 h-16 bg-gradient-to-r ${item.color} rounded-full opacity-20 animate-pulse`}
-                          ></div>
-
                           {/* Main node */}
                           <div
                             className={`relative w-12 h-12 bg-gradient-to-r ${
@@ -623,7 +545,7 @@ const Journey: React.FC = () => {
                       {/* Year Badge */}
                       <div
                         className={`w-5/12 ${
-                          isLeft ? "pl-8 text-left" : "pr-8 text-right"
+                          isLeft ? "pl-32 text-left" : "pr-32 text-right"
                         }`}
                       >
                         <div
@@ -644,60 +566,6 @@ const Journey: React.FC = () => {
             })}
           </div>
         </div>
-
-        {/* Stats Summary */}
-        <AnimatedSection animation="fadeInUp" delay={600}>
-          <div className="mt-12 sm:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              {
-                label: "Years of Experience",
-                value: "6+",
-                icon: Calendar,
-                color: "from-cyan-400 to-blue-500",
-              },
-              {
-                label: "Technologies Mastered",
-                value: "25+",
-                icon: Code,
-                color: "from-purple-400 to-pink-500",
-              },
-              {
-                label: "Projects Delivered",
-                value: "150+",
-                icon: Rocket,
-                color: "from-green-400 to-emerald-500",
-              },
-              {
-                label: "Developers Mentored",
-                value: "20+",
-                icon: Users,
-                color: "from-yellow-400 to-orange-500",
-              },
-            ].map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div
-                  key={index}
-                  className="group bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:-translate-y-2 hover:scale-105 text-center"
-                >
-                  <div
-                    className={`flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-r ${stat.color} bg-opacity-20 rounded-lg sm:rounded-xl mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <IconComponent className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
-                  </div>
-                  <div
-                    className={`text-2xl sm:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-1 sm:mb-2`}
-                  >
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                    {stat.label}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </AnimatedSection>
 
         {/* Call to Action */}
         <AnimatedSection animation="fadeInUp" delay={800}>

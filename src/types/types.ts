@@ -8,26 +8,15 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   featured: boolean;
-  category: 'web' | 'mobile' | 'desktop';
+  category: "web" | "mobile" | "desktop";
 }
 
 export interface Skill {
   name: string;
   level: number;
-  category: 'frontend' | 'backend' | 'tools' | 'design';
+  category: "frontend" | "backend" | "tools" | "design";
   icon: string;
 }
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  company: string;
-  content: string;
-  avatar: string;
-  rating: number;
-}
-
 export interface BlogPost {
   id: string;
   title: string;
@@ -37,6 +26,28 @@ export interface BlogPost {
   tags: string[];
   image: string;
   slug: string;
+}
+
+export interface Story {
+  id: string;
+  title: string;
+  content: string;
+  image: string;
+  category: 'work' | 'school' | 'love' | 'everyday';
+  mood: 'excited' | 'peaceful' | 'thoughtful' | 'happy' | 'nostalgic';
+  tags: string[];
+  date: string;
+  author: string;
+}
+
+export interface StoryFormData {
+  password: string;
+  title: string;
+  content: string;
+  category: 'work' | 'school' | 'love' | 'everyday';
+  mood: 'excited' | 'peaceful' | 'thoughtful' | 'happy' | 'nostalgic';
+  tags: string;
+  image?: File;
 }
 
 export interface ContactForm {
