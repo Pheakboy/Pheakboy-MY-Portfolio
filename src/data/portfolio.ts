@@ -16,6 +16,20 @@ export const projects: Project[] = [
   },
   {
     id: "2",
+    title: "Learn Khmer",
+    description:
+      "A language learning platform focused on teaching the Khmer language.",
+    longDescription:
+      "An interactive platform designed to help users learn the Khmer language through engaging lessons, quizzes, and cultural insights.",
+    image: "/images/learnkhmer.png",
+    technologies: ["Html", "CSS", "JavaScript", "Bootstrap", "jQuery"],
+    githubUrl: "https://github.com/Pheakboy/LearnKhmer",
+    liveUrl: "https://learn-khmer-bzk60qqri-pheakboys-projects.vercel.app/",
+    featured: true,
+    category: "web",
+  },
+  {
+    id: "3",
     title: "Movie Tons",
     description:
       "A movie ui with react js with responsive design and modern UI components",
@@ -29,7 +43,7 @@ export const projects: Project[] = [
     category: "web",
   },
   {
-    id: "3",
+    id: "4",
     title: "TodoList App",
     description: "A task management app built with React js",
     longDescription:
@@ -48,7 +62,7 @@ export const projects: Project[] = [
     category: "web",
   },
   {
-    id: "4",
+    id: "5",
     title: "Burger app UI",
     description: "A burger app UI built with React js and TypeScript",
     longDescription:
@@ -61,7 +75,7 @@ export const projects: Project[] = [
     category: "web",
   },
   {
-    id: "5",
+    id: "6",
     title: "E-commerce Ui website",
     description: "An e-commerce UI website built with React js and TypeScript",
     longDescription:
@@ -74,7 +88,7 @@ export const projects: Project[] = [
     category: "web",
   },
   {
-    id: "6",
+    id: "7",
     title: "Crud App UI with api",
     description: "A CRUD application UI built with React js and TypeScript",
     longDescription:
