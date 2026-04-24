@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       "Performance Optimizer",
       "Tech Innovator",
     ],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
       setText(
         isDeleting
           ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
+          : fullText.substring(0, text.length + 1),
       );
 
       setTypingSpeed(isDeleting ? 30 : 150);
@@ -84,7 +84,6 @@ const Hero: React.FC = () => {
             <Code size={60} className="text-cyan-400 animate-float" />
           </div>
         </AnimatedSection>
-
         <AnimatedSection animation="fadeInRight" delay={400}>
           <div className="absolute -top-10 -right-16 opacity-20">
             <Sparkles
@@ -93,7 +92,6 @@ const Hero: React.FC = () => {
             />
           </div>
         </AnimatedSection>
-
         <AnimatedSection animation="scaleIn" delay={600}>
           <div className="absolute -bottom-16 left-10 opacity-20">
             <Zap
@@ -102,13 +100,11 @@ const Hero: React.FC = () => {
             />
           </div>
         </AnimatedSection>
-
         <AnimatedSection animation="fadeInUp" delay={800}>
           <div className="absolute top-20 right-20 opacity-20">
             <Star size={45} className="text-pink-400 animate-float delay-700" />
           </div>
         </AnimatedSection>
-
         <AnimatedSection animation="fadeInLeft" delay={1000}>
           <div className="absolute bottom-32 right-32 opacity-20">
             <Rocket
@@ -117,7 +113,6 @@ const Hero: React.FC = () => {
             />
           </div>
         </AnimatedSection>
-
         {/* Enhanced Main Content */}
         <div className="mb-8">
           <AnimatedSection animation="slideInUp" delay={200}>
@@ -188,7 +183,6 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </AnimatedSection>
-
         <AnimatedSection animation="fadeInUp" delay={800}>
           <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
             I create great digital experiences using the latest technologies. I
@@ -197,7 +191,6 @@ const Hero: React.FC = () => {
             something amazing together
           </p>
         </AnimatedSection>
-
         {/* Enhanced CTA Buttons */}
         <AnimatedSection animation="scaleIn" delay={1000}>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -231,7 +224,6 @@ const Hero: React.FC = () => {
             </button>
           </div>
         </AnimatedSection>
-
         {/* Enhanced Scroll Indicator */}
         <AnimatedSection animation="fadeInUp" delay={1200}>
           <div className="flex flex-col items-center">
