@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
 
   const words = React.useMemo(
     () => [
-      "Frontend Developer",
+      "Fullstack Web Developer at Wing Bank",
       "React/Next Specialist",
       "Design Enthusiast",
       "Performance Optimizer",
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
           <AnimatedSection animation="slideInUp" delay={200}>
             <div className="mt-16">
               <span className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6 animate-pulse">
-                ✨ Available for new opportunities
+                ✨ Fullstack Web Developer at Wing Bank
               </span>
             </div>
           </AnimatedSection>
@@ -148,8 +148,8 @@ const Hero: React.FC = () => {
         <AnimatedSection animation="scaleIn" delay={1000}>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <a
-              href="/Sot-Sopheaktra-CV.pdf"
-              download="Sot-Sopheaktra-CV.pdf"
+              href="/SOT Sopheaktra- Full-Stack Web Developer.pdf"
+              download="SOT Sopheaktra- Full-Stack Web Developer.pdf"
               className="group relative"
             >
               <button className="relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 border border-emerald-500/50 text-emerald-400 px-10 py-5 rounded-lg font-mono font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:bg-emerald-500/10 hover:border-emerald-400 hover:text-emerald-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-1 active:translate-y-0">
@@ -251,8 +251,8 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <p className="text-white text-sm mb-3">
-            Open for new opportunities and exciting projects. Let's build
-            something amazing together!
+            Building impactful digital banking experiences at Wing Bank with a
+            strong focus on performance, usability, and reliability.
           </p>
           <div className="flex items-center text-xs text-gray-400">
             <span>Response time: </span>

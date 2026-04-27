@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin, Twitter } from "lucide-react";
+import { Menu, X, Github, Linkedin, Moon, Sun } from "lucide-react";
+import { useTheme } from "../hooks/useTheme";
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = React.useMemo(
     () => [
@@ -89,6 +91,14 @@ const Navigation: React.FC = () => {
 
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-white/5 border border-white/20 text-gray-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all duration-300"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <a
               href="https://github.com/Pheakboy/Pheakboy-MY-Portfolio"
               className="text-gray-400 hover:text-white transition-colors"
@@ -101,21 +111,25 @@ const Navigation: React.FC = () => {
             >
               <Linkedin size={26} />
             </a>
-            <a
-              href="https://x.com/Pkboy168"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              <Twitter size={26} />
-            </a>
           </div>
 
           {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white hover:text-cyan-400 transition-colors"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-white/5 border border-white/20 text-gray-300 hover:text-cyan-400 hover:border-cyan-400/40 transition-all duration-300"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:text-cyan-400 transition-colors"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -148,12 +162,6 @@ const Navigation: React.FC = () => {
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Linkedin size={24} />
-              </a>
-              <a
-                href="https://twitter.com"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter size={24} />
               </a>
             </div>
           </div>

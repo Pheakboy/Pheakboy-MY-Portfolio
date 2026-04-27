@@ -3,7 +3,6 @@ import {
   ExternalLink,
   Github,
   Eye,
-  Filter,
   Star,
   Calendar,
 } from "lucide-react";
@@ -178,7 +177,7 @@ const Projects: React.FC = () => {
 
             {/* Enhanced Category Filter */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              <Filter className="text-gray-400 mr-2" size={20} />
+              {/* <Filter className="text-gray-400 mr-2" size={20} /> */}
               {categories.map((category, index) => (
                 <AnimatedSection
                   key={category}

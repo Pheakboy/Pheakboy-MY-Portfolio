@@ -199,6 +199,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Enhanced Line Clamp Utilities */
 .line-clamp-2 {
   display: -webkit-box;
@@ -442,4 +446,74 @@ html {
   100% {
     left: 100%;
   }
+}
+
+/* Theme system */
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Light mode global overrides for existing dark-first classes */
+:root[data-theme="light"] body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+:root[data-theme="light"] .bg-gray-900 {
+  background-color: #f8fafc !important;
+}
+
+:root[data-theme="light"] .bg-gray-900\/50 {
+  background-color: rgba(241, 245, 249, 0.82) !important;
+}
+
+:root[data-theme="light"] .bg-gray-900\/80,
+:root[data-theme="light"] .bg-gray-900\/95 {
+  background-color: rgba(248, 250, 252, 0.92) !important;
+}
+
+:root[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+:root[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+:root[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+:root[data-theme="light"] .text-gray-300 {
+  color: #334155 !important;
+}
+
+:root[data-theme="light"] .text-gray-400,
+:root[data-theme="light"] .text-gray-500 {
+  color: #64748b !important;
+}
+
+:root[data-theme="light"] .border-gray-800\/50,
+:root[data-theme="light"] .border-gray-800 {
+  border-color: rgba(148, 163, 184, 0.35) !important;
+}
+
+:root[data-theme="light"] .border-white\/10 {
+  border-color: rgba(148, 163, 184, 0.3) !important;
+}
+
+:root[data-theme="light"] .border-white\/20 {
+  border-color: rgba(148, 163, 184, 0.4) !important;
+}
+
+:root[data-theme="light"] .from-gray-900,
+:root[data-theme="light"] .via-gray-900,
+:root[data-theme="light"] .to-gray-900 {
+  --tw-gradient-from: #f8fafc var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(248 250 252 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }

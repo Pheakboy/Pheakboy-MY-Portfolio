@@ -70,7 +70,7 @@ const About: React.FC = () => {
                 <div className="relative bg-gray-900 rounded-3xl p-2 overflow-hidden">
                   <img
                     src="/images/MyImage2.png"
-                    alt="Alex Chen - Frontend Developer"
+                    alt="Sopheaktra - Fullstack Web Developer at Wing Bank"
                     className="w-full h-[800px] object-cover rounded-2xl transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />
 
@@ -82,7 +82,7 @@ const About: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                       <span className="text-white text-sm font-medium">
-                        Available for work
+                        Working at Wing Bank
                       </span>
                     </div>
                   </div>
@@ -91,7 +91,7 @@ const About: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <Code className="w-4 h-4 text-cyan-400" />
                       <span className="text-white text-sm font-medium">
-                        Frontend Developer
+                        Fullstack Web Developer
                       </span>
                     </div>
                   </div>
@@ -110,12 +110,10 @@ const About: React.FC = () => {
                 </h3>
                 <div className="prose prose-lg text-gray-300 space-y-4">
                   <p className="text-lg leading-relaxed">
-                    I'm a passionate frontend developer with over 1 years of
-                    experience building scalable web applications and user
-                    interfaces. My journey began with a curiosity about how
-                    websites work, and it has evolved into a deep expertise in
-                    modern JavaScript frameworks and cutting-edge web
-                    technologies.
+                    I'm a passionate fullstack web developer currently working
+                    at Wing Bank. I build scalable web applications and
+                    user-focused digital experiences that combine clean frontend
+                    interfaces with reliable backend services.
                   </p>
 
                   <p className="text-lg leading-relaxed">
